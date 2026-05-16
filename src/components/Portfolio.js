@@ -166,21 +166,29 @@ const Portfolio = () => {
     certifications: [
       { name: "AWS Certified Cloud Practitioner", url: "https://cp.certmetrics.com/amazon/en/public/verify/credential/e8c0be0580964635ab9cfd99971b5634" }
     ],
-    interests: ["Chess", "Premier League", "Cricket"]
+    interests: ["Chess", "Premier League", "Cricket"],
+    photo: "https://media.licdn.com/dms/image/v2/D4D03AQHvZcchNRBCqA/profile-displayphoto-scale_200_200/B4DZyG6fmFIwAY-/0/1771790008657?e=1780531200&v=beta&t=tl-wMRxaYFnJS6_GM0VXW_IHV6C_xDzv9Ort5aJKZF8"
   };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
       {/* Header / Hero Section */}
       <header className="bg-slate-900 text-white py-16 px-6 shadow-md">
-        <div className="max-w-5xl mx-auto text-center md:text-left md:flex justify-between items-center">
-          <div className="animate-fade-in-down">
-            <h1 className="text-4xl font-extrabold tracking-tight">{cvData.name}</h1>
-            <p className="text-xl text-blue-400 mt-2 font-medium animate-fade-in-down delay-200">{cvData.title}</p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4 text-sm text-slate-300 animate-fade-in-down delay-300">
-              <span className="flex items-center gap-1"><MapPin size={16} /> {cvData.location}</span>
-              <span className="flex items-center gap-1"><Phone size={16} /> {cvData.contact.phone}</span>
-              <span className="flex items-center gap-1"><Mail size={16} /> {cvData.contact.email}</span>
+        <div className="max-w-5xl mx-auto text-center md:text-left md:flex justify-between items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 animate-fade-in-down">
+            <img
+              src={cvData.photo}
+              alt={cvData.name}
+              className="w-28 h-28 rounded-full object-cover border-4 border-blue-500 shadow-lg flex-shrink-0"
+            />
+            <div>
+              <h1 className="text-4xl font-extrabold tracking-tight">{cvData.name}</h1>
+              <p className="text-xl text-blue-400 mt-2 font-medium animate-fade-in-down delay-200">{cvData.title}</p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4 text-sm text-slate-300 animate-fade-in-down delay-300">
+                <span className="flex items-center gap-1"><MapPin size={16} /> {cvData.location}</span>
+                <span className="flex items-center gap-1"><Phone size={16} /> {cvData.contact.phone}</span>
+                <span className="flex items-center gap-1"><Mail size={16} /> {cvData.contact.email}</span>
+              </div>
             </div>
           </div>
           <div className="mt-6 md:mt-0 animate-fade-in-down delay-400">
